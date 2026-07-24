@@ -1,0 +1,13 @@
+# 本地设置（含本地路径）
+.claude/settings.local.json
+
+# 用户项目数据（如果 kb/ 不小心建在了这里）
+kb/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# Python/NLP 临时文件（语料处理管线）
+__pycache__/
+*.pyc
