@@ -142,16 +142,16 @@ Take it and write your own story — the joy and the ache in it are real.
 
 MIT License — see [LICENSE](LICENSE) for details.
 
-## 免责声明
+## Disclaimer
 
-本技能是**对写作模式的观察总结**，来源于番茄签约作家奶糖酥公开作品的定量分析。本仓库**不包含、不复制、不重新分发**任何受版权保护的原文内容。
+This skill is an **observational summary of writing patterns**, based on quantitative analysis of publicly available works by Naitangsu, a contracted author on Fanqie Novel. This repository **does not contain, reproduce, or redistribute** any copyright-protected original text.
 
-- 所有技法示例使用**中性指称**和**通用场景**
-- 蒸馏的是**结构规律**（句子节奏、对话机制、叙事架构），而非创作内容
-- 原理等同于风格指南或写作教科书——教的是"怎么写"，不是"写了什么"
-- 原作者对其原创作品保留完整著作权
+- All technique examples use **neutral references** and **generic scenarios**.
+- The distillation focuses on **structural patterns**—such as sentence rhythm, dialogue mechanics, and narrative architecture—not creative content.
+- The result is comparable to a style guide or writing textbook: it explains **how to write**, not **what was written**.
+- The original author retains full copyright to her original works.
 
-如您是奶糖酥本人或权利人，认为本仓库侵犯了您的权益，请提交 Issue 或联系仓库维护者。
+If you are Naitangsu or a rights holder and believe this repository infringes your rights, please open an issue or contact the repository maintainer.
 
 ---
 
