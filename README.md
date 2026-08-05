@@ -29,43 +29,7 @@ git clone https://github.com/haoming-yang/naitangsu-write-skill.git
 cd naitangsu-write-skill/skill
 ```
 
-### 2. Install the skill
-
-This repository contains Markdown instructions and reference files only. No Python packages are required, so there is no `requirements.txt` to install.
-
-#### Claude Code (macOS / Linux)
-
-```bash
-mkdir -p ~/.claude/skills/naitangsu-write-skill
-cp -R ./. ~/.claude/skills/naitangsu-write-skill/
-```
-
-#### Claude Code (Windows PowerShell)
-
-```powershell
-$dest = Join-Path $HOME ".claude\skills\naitangsu-write-skill"
-New-Item -ItemType Directory -Force -Path $dest | Out-Null
-Copy-Item -Path ".\*" -Destination $dest -Recurse -Force
-```
-
-#### Codex
-
-```bash
-mkdir -p ~/.agents/skills/naitangsu-write-skill
-cp -R ./. ~/.agents/skills/naitangsu-write-skill/
-```
-
-### 3. Verify the installation
-
-The installed directory must contain `SKILL.md` directly:
-
-```text
-~/.claude/skills/naitangsu-write-skill/SKILL.md
-```
-
-If `SKILL.md` is located at `.../naitangsu-write-skill/skill/SKILL.md`, you copied the repository root instead of the contents of the `skill/` directory.
-
-### 4. Start using the skill
+### 2. Start using the skill
 
 Once installed, the skill can be selected automatically for matching modern-romance writing tasks. You can also explicitly mention the skill or its methods. Try:
 
