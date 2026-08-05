@@ -24,18 +24,70 @@
 
 ### 1. Install
 
+The repository contains documentation and demos in addition to the distributable skill. Install the contents of `skill/` so that `SKILL.md` is directly inside the target directory.
+
+#### macOS / Linux — Claude Code
+
 ```bash
-git clone https://github.com/haoming-yang/naitangsu-write-skill.git
-cp -r naitangsu-write-skill/skill ~/.claude/skills/naitangsu-write-skill/
+tmp_dir="$(mktemp -d)"
+git clone --depth 1 https://github.com/haoming-yang/naitangsu-write-skill.git "$tmp_dir/repo"
+mkdir -p "$HOME/.claude/skills/naitangsu-write-skill"
+cp -R "$tmp_dir/repo/skill/." "$HOME/.claude/skills/naitangsu-write-skill/"
+rm -rf "$tmp_dir"
 ```
 
-Or copy the `skill/` folder manually to:
-- **Global**: `~/.claude/skills/naitangsu-write-skill/`
-- **Project**: `<your-project>/.claude/skills/naitangsu-write-skill/`
+#### Windows PowerShell — Claude Code
+
+```powershell
+$repo = Join-Path $env:TEMP "naitangsu-write-skill"
+if (Test-Path -LiteralPath $repo) { Remove-Item -LiteralPath $repo -Recurse -Force }
+git clone --depth 1 https://github.com/haoming-yang/naitangsu-write-skill.git $repo
+$dest = Join-Path $HOME ".claude\skills\naitangsu-write-skill"
+New-Item -ItemType Directory -Force -Path $dest | Out-Null
+Copy-Item -Path (Join-Path $repo "skill\*") -Destination $dest -Recurse -Force
+```
+
+#### Project-local installation
+
+Use a project-local skill when you want the repository to share the same writing workflow with collaborators.
+
+```bash
+mkdir -p .claude/skills/naitangsu-write-skill
+cp -R /path/to/naitangsu-write-skill/skill/. .claude/skills/naitangsu-write-skill/
+```
+
+On Windows PowerShell:
+
+```powershell
+$dest = Join-Path (Get-Location) ".claude\skills\naitangsu-write-skill"
+New-Item -ItemType Directory -Force -Path $dest | Out-Null
+Copy-Item -Path ".\skill\*" -Destination $dest -Recurse -Force
+```
+
+#### Codex
+
+For Codex, copy the same `skill/` contents into the user-level skills directory:
+
+```bash
+mkdir -p "$HOME/.agents/skills/naitangsu-write-skill"
+cp -R /path/to/naitangsu-write-skill/skill/. "$HOME/.agents/skills/naitangsu-write-skill/"
+```
+
+#### Verify the installation
+
+The final path must contain `SKILL.md` directly:
+
+```text
+~/.claude/skills/naitangsu-write-skill/SKILL.md
+```
+
+If `SKILL.md` is instead at `.../naitangsu-write-skill/skill/SKILL.md`, the repository root was copied by mistake. Restart Claude Code or Codex after installation if the skill does not appear.
+
+> Review third-party skills before enabling them. A skill is an instruction package that may include scripts or references; install only repositories you trust.
 
 ### 2. Use
 
-Once installed, the skill loads automatically when you mention writing-related keywords. Try:
+Once installed, the skill can be selected automatically for matching modern-romance writing tasks. You can also explicitly mention the skill or its methods. Try:
 
 > "Help me revise this paragraph to be cleaner"  
 > "How do I write this confession scene?"  
